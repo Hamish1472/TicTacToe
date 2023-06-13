@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Welcome to TicTacToe!\n");
+            Console.WriteLine("Start? ");
+            string start = Console.ReadLine();
         }
     }
 }
