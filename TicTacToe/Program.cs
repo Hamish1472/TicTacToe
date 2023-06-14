@@ -181,7 +181,6 @@
             Console.WriteLine("G      |H      |I      ");                                                   // G      |H      |I      
             Console.WriteLine($"   {xo[grid[2, 0]]}   |   {xo[grid[2, 1]]}   |   {xo[grid[2, 2]]}   ");     //        |       |       
             Console.WriteLine("       |       |       ");                                                   //        |       |       
-
         }
     }
 }
