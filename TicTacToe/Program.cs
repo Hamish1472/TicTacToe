@@ -128,38 +128,38 @@
             return false;
         }
 
-        static void UpdateGrid(string coord, int[,] grid, int player)                  // ChatGPT wrote this because my original had a mess of switch-case and if-else statements
-        {                                                                              // My mess did work, just you know... messy
-            bool validCoord = GetCoordinates(coord, out int row, out int col);         // 
-            while (!validCoord || grid[row, col] != 0)                                 // 
-            {                                                                          // 
-                Console.WriteLine("Invalid Placement");                                // 
-                Console.WriteLine("Re-Enter Placement: ");                             // 
-                coord = Console.ReadLine().ToUpper();                                  // 
-                validCoord = GetCoordinates(coord, out row, out col);                  // 
-            }                                                                          // 
-                                                                                       // 
-            grid[row, col] = player;                                                   // 
-        }                                                                              // 
-                                                                                       // 
-        static bool GetCoordinates(string coord, out int row, out int col)             // 
-        {                                                                              // 
-            row = -1;                                                                  // 
-            col = -1;                                                                  // 
-                                                                                       // 
-            if (coord.Length != 1)                                                     // 
-                return false;                                                          // 
-                                                                                       // 
-            int index = coord[0] - 'A';                                                // Didn't know about being able to get the int difference between chars
-                                                                                       // 
-            if (index < 0 || index >= 9)                                               // 
-                return false;                                                          // 
-                                                                                       // 
-            row = index / 3;                                                           // 
-            col = index % 3;                                                           // 
-                                                                                       // 
-            return true;                                                               // 
-        }                                                                              // 
+        static void UpdateGrid(string coord, int[,] grid, int player)
+        {
+            bool validCoord = GetCoordinates(coord, out int row, out int col);
+            while (!validCoord || grid[row, col] != 0)
+            {
+                Console.WriteLine("Invalid Placement");
+                Console.WriteLine("Re-Enter Placement: ");
+                coord = Console.ReadLine().ToUpper();
+                validCoord = GetCoordinates(coord, out row, out col);
+            }
+
+            grid[row, col] = player;
+        }
+
+        static bool GetCoordinates(string coord, out int row, out int col)
+        {
+            row = -1;
+            col = -1;
+
+            if (coord.Length != 1)
+                return false;
+
+            int index = coord[0] - 'A';
+
+            if (index < 0 || index >= 9)
+                return false;
+
+            row = index / 3;
+            col = index % 3;
+
+            return true;
+        }
 
         static void DrawGrid(int[,] grid)
         {
